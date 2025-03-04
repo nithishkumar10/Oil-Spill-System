@@ -422,6 +422,7 @@ def Classification(request):
                     messages.error(request, "User not found. Please log in again.")
             else:
                 messages.error(request, "You must be logged in to receive email alerts.")
+        email = user.user_email
         pdf_file_path = generate_pdf(predicted_class, email, uploaded_image_url)
         print(pdf_file_path)
         # Save the prediction result in the database
